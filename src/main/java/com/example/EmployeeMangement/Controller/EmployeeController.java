@@ -3,6 +3,7 @@ package com.example.EmployeeMangement.Controller;
 import com.example.EmployeeMangement.Repository.EmployeeRepo;
 import com.example.EmployeeMangement.Service.EmployeeService;
 import com.example.EmployeeMangement.dto.EmployeeDto;
+import com.example.EmployeeMangement.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,5 +33,10 @@ public class EmployeeController {
     @PutMapping("/updateEmployee/{id}")
     public EmployeeDto updateEmployee(@PathVariable Long id , @RequestBody  EmployeeDto employeeDto){
         return employeeService.updateEmployee(id , employeeDto);
+    }
+
+    @DeleteMapping("/deleteEmployee/{id}")
+    public String deleteEmployee(@PathVariable Long id){
+        return employeeService.deleteEmployee(id);
     }
 }

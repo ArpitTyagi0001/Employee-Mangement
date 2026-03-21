@@ -58,4 +58,14 @@ public class EmployeeService {
 
         return modelMapper.map(employee1 , EmployeeDto.class);
     }
+
+    public String deleteEmployee(Long id) {
+        Employee employee = employeeRepo.findById(id).orElseThrow(
+                ()-> new EntityNotFoundException("Employee Not Found By id:"+ id)
+        );
+
+        employeeRepo.delete(employee);
+
+        return "Successfully deleted";
+    }
 }
