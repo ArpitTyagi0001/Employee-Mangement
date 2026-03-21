@@ -34,5 +34,19 @@ public class EmployeeService {
         Employee employee = employeeRepo.findById(id).orElseThrow(
                 ()-> new EntityNotFoundException("Employee Not Found By id :"+id)
         );
+
+        return modelMapper.map(employee , EmployeeDto.class);
+    }
+
+    public EmployeeDto addEmployee(EmployeeDto employeeDto) {
+        Employee employee = modelMapper.map(employeeDto , Employee.class);
+
+        Employee employeeSave = employeeRepo.save(employee);
+
+        return modelMapper.map(employeeSave , EmployeeDto.class);
+    }
+
+    public EmployeeDto updateEmployee(EmployeeDto employeeDto) {
+
     }
 }
