@@ -22,10 +22,12 @@ public class SpringSecurity {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.csrf(customizer->customizer.disable())
-            .authorizeHttpRequests(request -> request.anyRequest().authenticated())
+            .authorizeHttpRequests(request -> request
+                    .requestMatchers("/index.html","/style.css","/script.js").permitAll()
+                    .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults())
-            .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .oauth2Login(Customizer.withDefaults());
+            .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+            //.oauth2Login(Customizer.withDefaults());
 
         return http.build();
     }
