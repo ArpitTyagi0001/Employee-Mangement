@@ -15,3 +15,8 @@ INSERT INTO employee(name , email , position , dept_id)
         ('Raj Patel',     'raj@gmail.com',    'Senior Developer', 2);
 
 
+INSERT INTO users(username , password)
+    VALUES
+        ('Kunal' , '$2a$12$2Ld6tvVVbiao/YdIc578EuEqE5QzIOvyBR/OUmUM2..MNXspFQNgK'),
+        ('Varun' , '$2a$12$sQIeahul2c4b24THToXrtOQ3zuDvtUcQs/YbZ7g85BXV7XhxLmH9a'),
+        ('Ayushi' , '$2a$12$w7sZJHRRSY/BpsVVDMNw4eOvVlF0Hyus7zC/yC9lG1Z.1ShSEkzjW');
