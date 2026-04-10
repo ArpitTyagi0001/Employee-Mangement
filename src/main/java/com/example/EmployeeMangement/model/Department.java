@@ -1,4 +1,4 @@
-package com.example.EmployeeMangement.entity;
+package com.example.EmployeeMangement.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

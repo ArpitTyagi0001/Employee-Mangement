@@ -1,8 +1,8 @@
 package com.example.EmployeeMangement.Service;
 
 import com.example.EmployeeMangement.Repository.UsersRepo;
-import com.example.EmployeeMangement.entity.UserDetailsPrinciple;
-import com.example.EmployeeMangement.entity.Users;
+import com.example.EmployeeMangement.model.UserDetailsPrinciple;
+import com.example.EmployeeMangement.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

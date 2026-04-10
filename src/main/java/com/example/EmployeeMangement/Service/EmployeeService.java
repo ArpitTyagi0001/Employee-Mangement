@@ -2,7 +2,7 @@ package com.example.EmployeeMangement.Service;
 
 import com.example.EmployeeMangement.Repository.EmployeeRepo;
 import com.example.EmployeeMangement.dto.EmployeeDto;
-import com.example.EmployeeMangement.entity.Employee;
+import com.example.EmployeeMangement.model.Employee;
 import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

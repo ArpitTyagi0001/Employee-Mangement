@@ -1,4 +1,4 @@
-package com.example.EmployeeMangement.entity;
+package com.example.EmployeeMangement.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,19 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Users {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true , nullable = false , length = 100)
-    private String username;
+    @Column(nullable = false , length=100)
+    private String name;
+
+    @Column(nullable = false , unique = true , length = 100)
+    private String email;
 
     @Column(nullable = false , length = 100)
-    private String password;
+    private String position;
+
+    @ManyToOne
+    @JoinColumn(name = "dept_id")
+    private Department department;
 }
